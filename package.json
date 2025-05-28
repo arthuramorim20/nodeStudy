@@ -2,15 +2,15 @@
   "name": "nodeex",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dis/index.js",
+  "type": "commonjs",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "node ./dist/index.js",
     "build:dev": "tsc --watch"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
   "dependencies": {
     "@types/node": "^22.15.23",
     "typescript": "^5.8.3"
