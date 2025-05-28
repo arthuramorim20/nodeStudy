@@ -31,6 +31,10 @@ class GetFIle {
                 valid: false
             }
         }
+
+        return {
+            valid:true
+        }
     }
 }
 
@@ -41,4 +45,3 @@ class GetFIle {
 
 })();
 
-console.log('hellow')
