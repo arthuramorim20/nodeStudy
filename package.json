@@ -5,7 +5,8 @@
   "main": "dis/index.js",
   "type": "commonjs",
   "scripts": {
-    "test": "node ./dist/index.js",
+    "test": "node ./dist/index.test.js",
+    "dev": "node ./dist/index.js",
     "build:dev": "tsc --watch"
   },
   "keywords": [],
