@@ -14,7 +14,8 @@ class GetFIle {
 
         if (!validation?.valid) throw new Error(validation?.error);
 
-        return content;
+        const convertJsonFile = GetFIle.parseCsvToJson(content);
+        return convertJsonFile;
     };
 
     static async getFileContent(filePath: string) {  //obter o arquivo e o join irá tratar caminhos. Deve ser passado UTF-8
@@ -22,6 +23,24 @@ class GetFIle {
 
         return (await readFile(fileName)).toString("utf8");
     };
+
+    static parseCsvToJson(filePath: string) {
+        const line = filePath.split('\n');
+        //remove o header
+        const firstLine = line.shift() as string;
+        const header = firstLine.split(',');
+        const users = line.map((line) => {
+            const columns = line.split(',');
+            let user: { [key: string]: string } = {};
+
+            for (const index in columns) {
+                user[header[index]] = columns[index];
+            }
+            return user
+
+        });
+        console.log(users);
+    }
 
     static isValid(csvString: string, options = DEFAULT_OPTION) { //Será feita a validação //param já recebeu o dado
         const [header, ...fileWithoutHeader] = csvString.split('\n');
@@ -34,8 +53,8 @@ class GetFIle {
         };
 
         const isContentLengthAccepted = ( //validação do total de linhas
-            fileWithoutHeader.length  > 0 &&
-            fileWithoutHeader.length  <= options.maxLines
+            fileWithoutHeader.length > 0 &&
+            fileWithoutHeader.length <= options.maxLines
         )
 
         if (!isContentLengthAccepted) {

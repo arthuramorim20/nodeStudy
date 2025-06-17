@@ -1,19 +1,24 @@
 {
   "name": "nodeex",
   "version": "1.0.0",
-  "description": "",
-  "main": "dis/index.js",
-  "type": "commonjs",
+  "description": "��#\u0000 \u0000n\u0000o\u0000d\u0000e\u0000S\u0000t\u0000u\u0000d\u0000y\u0000\r\u0000 \u0000",
+  "main": "index.js",
   "scripts": {
-    "test": "node ./dist/index.test.js",
-    "dev": "node ./dist/index.js",
-    "build:dev": "tsc --watch"
+    "test": "node ./dist/index.test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arthuramorim20/nodeStudy.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "@types/node": "^22.15.23",
-    "typescript": "^5.8.3"
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/arthuramorim20/nodeStudy/issues"
+  },
+  "homepage": "https://github.com/arthuramorim20/nodeStudy#readme",
+  "devDependencies": {
+    "@types/node": "^24.0.3"
   }
 }
